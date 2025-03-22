@@ -1,0 +1,58 @@
+/* src/styles/RideRequestForm.module.css */
+.rideform {
+  width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.rideform h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.rideform div {
+  margin-bottom: 15px;
+}
+
+.rideform label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #555;
+}
+
+.rideform input[type="text"],
+.rideform input[type="number"],
+.rideform input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.rideform input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.rideform button {
+  background-color: #5cb85c;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.rideform button:hover {
+  background-color: #4cae4c;
+}

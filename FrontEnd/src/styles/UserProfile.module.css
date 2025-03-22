@@ -1,0 +1,102 @@
+/* src/styles/UserProfile.module.css */
+.userprofile {
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.userprofile h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.userprofile p {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.userprofile label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.userprofile input[type="text"],
+.userprofile input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.userprofile button {
+  background-color: #007bff; /* Primary blue color */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.2s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.userprofile button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.userprofile .profileImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  display: block;
+  border: 2px solid #eee;
+}
+
+.userprofile .editButton {
+  background-color: #f0ad4e; /* Warning/edit color */
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease;
+  margin-left: 10px;
+}
+
+.userprofile .editButton:hover {
+  background-color: #eea236;
+}
+
+.userprofile .formGroup {
+  margin-bottom: 15px;
+}
+
+.userprofile .formGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #555;
+}
+
+.userprofile .formGroup input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box;
+}

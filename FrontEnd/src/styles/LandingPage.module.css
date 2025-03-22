@@ -1,0 +1,35 @@
+/* src/styles/LandingPage.module.css */
+.landingPage {
+  text-align: center;
+  padding: 50px;
+}
+
+.landingPage h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.landingPage p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0 10px;
+  font-size: 1.1em;
+  text-decoration: none;
+  background-color: #3498db;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}          

@@ -1,0 +1,18 @@
+/* src/styles/RideMatches.module.css */
+.rideMatches {
+  padding: 20px;
+}
+
+.rideMatches h2 {
+  margin-bottom: 20px;
+}
+
+.matchesList {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
