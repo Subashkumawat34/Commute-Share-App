@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import styles from "../styles/LoginPage.module.css";
 import ErrorMessage from "./ErrorMessage";
 import LoadingSpinner from "./LoadingSpinner";
-import { AuthContext } from "../context/AuthContext"; // Import AuthContext
-import { loginUser } from "../utils/api"; // Centralize API calls
+import { AuthContext } from "../context/AuthContext";
+import { loginUser } from "../utils/api";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -12,11 +12,11 @@ function LoginPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { setIsLoggedIn } = useContext(AuthContext); //Use context to manage login state
+  const { setIsLoggedIn } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(""); // Clear any previous errors
+    setError("");
     setLoading(true);
 
     if (!email || !password) {
@@ -26,13 +26,13 @@ function LoginPage() {
     }
 
     try {
-      const data = await loginUser(email, password);  //Use the api function
+      const data = await loginUser(email, password);
       if (data.token) {
-        localStorage.setItem("token", data.token); // Store the token
-        setIsLoggedIn(true);  // Update global login state
-        navigate("/app/request-ride"); // Redirect to main app area
+        localStorage.setItem("token", data.token);
+        setIsLoggedIn(true);
+        navigate("/app/request-ride");
       } else {
-        setError("Login failed: " + (data.message || "Invalid credentials")); // Specific error message
+        setError("Login failed: " + (data.message || "Invalid credentials"));
       }
     } catch (error) {
       console.error("Login error:", error);
@@ -43,10 +43,10 @@ function LoginPage() {
   };
 
   return (
-    <div className={styles.authform}>
+    <div className={styles.loginContainer}> {/* Use loginContainer */}
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className={styles.formGroup}> {/* Use formGroup */}
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -55,7 +55,7 @@ function LoginPage() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div>
+        <div className={styles.formGroup}> {/* Use formGroup */}
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -65,7 +65,7 @@ function LoginPage() {
           />
         </div>
         {error && <ErrorMessage message={error} />}
-        <button type="submit" disabled={loading}>
+        <button type="submit" disabled={loading} className={styles.loginButton}> {/* Use loginButton */}
           {loading ? <LoadingSpinner /> : "Login"}
         </button>
       </form>

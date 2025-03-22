@@ -1,52 +1,57 @@
-import React, { useContext } from "react"; //Import useContext
-import { Link, useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import styles from "../styles/Navbar.module.css";
-import { AuthContext } from "../context/AuthContext"; // Import AuthContext
-
+import { AuthContext } from "../context/AuthContext.jsx";
 function Navbar() {
-  const navigate = useNavigate();
-  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext); // Use context
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    setIsLoggedIn(false);  // Update global state on logout
-    navigate("/");
-  };
+  const { isLoggedIn } = useContext(AuthContext); // Get the login state
 
   return (
-    <nav className={styles.nav}>
-      <ul>
+    <nav className={styles.navbar}>
+      <ul className={styles.navList}>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" className={styles.navLink}>
+            Home
+          </Link>
         </li>
-        {isLoggedIn ? (
+
+        {/* Conditionally render these links only if the user is logged in */}
+        {isLoggedIn && (
           <>
             <li>
-              <Link to="/app/request-ride">Request Ride</Link>
+              <Link to="/app/request-ride" className={styles.navLink}>
+                Request Ride
+              </Link>
             </li>
             <li>
-              <Link to="/app/offer-ride">Offer Ride</Link>
+              <Link to="/app/offer-ride" className={styles.navLink}>
+                Offer Ride
+              </Link>
             </li>
             <li>
-              <Link to="/app/matches">Matches</Link>
+              <Link to="/app/matches" className={styles.navLink}>
+                Matches
+              </Link>
             </li>
             <li>
-              <Link to="/app/profile">Profile</Link>
-            </li>
-            <li>
-              <Link to="/app/map">Map</Link>
-            </li>
-            <li>
-              <button onClick={handleLogout}>Logout</button>
+              <Link to="/app/profile" className={styles.navLink}>
+                Profile
+              </Link>
             </li>
           </>
-        ) : (
+        )}
+
+        {/*Add login register in navbar when user is not login*/}
+        {!isLoggedIn && (
           <>
             <li>
-              <Link to="/login">Login</Link>
+              <Link to="/login" className={styles.navLink}>
+                Login
+              </Link>
             </li>
             <li>
-              <Link to="/register">Register</Link>
+              <Link to="/register" className={styles.navLink}>
+                Register
+              </Link>
             </li>
           </>
         )}

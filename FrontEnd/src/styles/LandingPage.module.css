@@ -5,13 +5,17 @@
 }
 
 .landingPage h1 {
-  font-size: 2.5em;
+  font-size: 2.3em;
   margin-bottom: 20px;
+  margin-top: 0px;
+  height: 200px;
+
 }
 
 .landingPage p {
+  margin-top: 20px;
   font-size: 1.2em;
-  color: #555;
+  color: #c2b5b5;
 }
 
 .buttons {
@@ -25,11 +29,21 @@
   font-size: 1.1em;
   text-decoration: none;
   background-color: #3498db;
-  color: white;
+  color: rgb(255, 255, 255);
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: #2980b9;
+  background-color: #adc4d3;
 }          
+
+
+.animatedTitle { /* NEW CSS FOR THE ANIMATED TITLE */
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  min-height: 3em; /* CRUCIAL: Ensure it always takes up the same vertical space */
+  line-height: 1.2; /*Adjust spacing as desired*/
+  /* Add any other h1 styles */
+}

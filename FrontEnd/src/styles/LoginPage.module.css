@@ -1,90 +1,150 @@
-.authform {
-  max-width: 400px;
-  margin: 20px auto;
+/* LoginPage.module.css */
+
+.loginContainer {
+  width: 90%; /* Responsive width */
+  min-width: 370px; /* Maximum width on larger screens */
+  margin: 50px auto; /* Center horizontally and add top margin */
   padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.authform h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: black;
-}
-
-.authform div {
-  margin-bottom: 15px;
-}
-
-.authform label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-.authform input {
-  background-color: rgb(190, 186, 180);
-  color: black;
-}
-
-.authform button {
-  width: 100%;
-}
-
-
-
-/* src/styles/LoginPage.module.css */
-.authform {
-  width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* Make this relative for child positioning */
+  z-index: 1; /* Ensure it's below the Navbar */
 }
 
-.authform h2 {
+.loginContainer h2 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
 }
 
-.authform div {
+.formGroup {
   margin-bottom: 15px;
 }
 
-.authform label {
+.formGroup label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
   color: #555;
 }
 
-.authform input {
+.formGroup input {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1em;
+  font-size: 16px;
+  box-sizing: border-box; /* Important: Include padding in width */
 }
 
-.authform button {
-  background-color: #3498db;
+.formGroup input:focus {
+  outline: none;
+  border-color: #66afe9; /* Highlight on focus */
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5); /* Optional shadow */
+}
+
+.loginButton {
+  background-color: #007bff;
   color: white;
-  padding: 10px 15px;
+  padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
+  font-size: 16px;
   width: 100%;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
-.authform button:hover {
-  background-color: #2980b9;
+.loginButton:hover {
+  background-color: #0056b3; /* Darker shade on hover */
 }
 
-.authform button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+.errorMessage {
+  color: #dc3545;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .loginContainer {
+    margin: 100px auto; /* Increase top margin on larger screens */
+  }
+}
+
+
+/* RegisterPage.module.css */
+
+.registerContainer {
+  width: 90%; /* Responsive width */
+  max-width: 450px; /* Slightly wider than login */
+  margin: 50px auto; /* Center horizontally and add top margin */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* Make this relative for child positioning */
+  z-index: 1; /* Ensure it's below the Navbar */
+}
+
+.registerContainer h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box; /* Important: Include padding in width */
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: #66afe9; /* Highlight on focus */
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5); /* Optional shadow */
+}
+
+.registerButton {
+  background-color: #28a745; /* Green color */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.registerButton:hover {
+  background-color: #218838; /* Darker shade on hover */
+}
+
+.errorMessage {
+  color: #dc3545;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .registerContainer {
+    margin: 100px auto; /* Increase top margin on larger screens */
+  }
 }

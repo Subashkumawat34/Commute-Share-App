@@ -1,47 +1,30 @@
-/* src/styles/Navbar.module.css */
-.nav {
-  position: fixed;
+.navbar {
+  position: fixed; /* Or 'sticky' if you want it to scroll with the page initially */
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #424242;
+  background-color: #333; /* Or your desired background color */
   color: white;
   padding: 10px 0;
-  z-index: 1000; /* Ensures it stays above other elements */
+  z-index: 1000; /* Very high z-index to ensure it's on top */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow */
 }
 
-.nav ul {
+.navList {
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-around; /* Or other alignment as needed */
 }
 
-.nav li {
-  margin: 0 15px;
-}
-
-.nav a {
+.navLink {
   color: white;
   text-decoration: none;
-  font-size: 1.1em;
-  transition: color 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
-.nav a:hover {
-  color: #9c9090;
-}
-
-.nav button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.nav button:hover {
-  color: #eeeeee;
+.navLink:hover {
+  background-color: #555;
 }
