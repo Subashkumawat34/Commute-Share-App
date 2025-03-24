@@ -2,7 +2,7 @@
 
 .loginContainer {
   width: 90%; /* Responsive width */
-  min-width: 370px; /* Maximum width on larger screens */
+  min-width: 450px; /* Maximum width on larger screens */
   margin: 50px auto; /* Center horizontally and add top margin */
   padding: 20px;
   background-color: #f9f9f9;
@@ -10,6 +10,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative; /* Make this relative for child positioning */
   z-index: 1; /* Ensure it's below the Navbar */
+  height: 100%;
 }
 
 .loginContainer h2 {
@@ -72,7 +73,6 @@
     margin: 100px auto; /* Increase top margin on larger screens */
   }
 }
-
 
 /* RegisterPage.module.css */
 
@@ -147,4 +147,48 @@
   .registerContainer {
     margin: 100px auto; /* Increase top margin on larger screens */
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+.oauthButtons {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.googleButton, .githubButton {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.googleButton {
+  background-color: #db4437;
+}
+
+.githubButton {
+  background-color: #24292e;
+}
+
+.googleButton:hover {
+  background-color: #c1351d;
+}
+
+.githubButton:hover {
+  background-color: #181c20;
 }

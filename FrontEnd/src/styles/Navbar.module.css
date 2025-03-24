@@ -3,11 +3,11 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #333; /* Or your desired background color */
+  background-color: #000000; /* Or your desired background color */
   color: white;
   padding: 10px 0;
   z-index: 1000; /* Very high z-index to ensure it's on top */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  box-shadow: 0 2px 4px rgba(75, 69, 69, 0.2); /* Optional shadow */
 }
 
 .navList {
@@ -26,5 +26,5 @@
 }
 
 .navLink:hover {
-  background-color: #555;
+  background-color: #353333;
 }

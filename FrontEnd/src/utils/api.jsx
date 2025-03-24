@@ -1,85 +1,94 @@
 // src/utils/api.js
 
-const API_BASE_URL = "/api"; // Or your actual API base URL
+import axios from "axios";
 
-// Function to handle API requests and errors
-async function handleRequest(url, options = {}) {
+const API_URL = "http://localhost:5000/api"; // HARDCODED URL (For Now)
+
+const getAuthHeader = () => {
+  const token = localStorage.getItem("token");
+  return token ? { Authorization: `Bearer ${token}` } : {};
+};
+
+export const loginUser = async (email, password) => {
+  try {
+    const response = await axios.post(`${API_URL}/users/login`, {
+      email,
+      password,
+    }); // Backend to work
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const registerUser = async (name, email, password) => {
+  try {
+    const response = await axios.post(`${API_URL}/users/register`, {
+      // Backend to work
+      name,
+      email,
+      password,
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const requestRide = async (requestData) => {
+  try {
+    const response = await axios.post(
+      `${API_URL}/ride-requests`, // Backend to work
+      requestData,
+      {
+        headers: getAuthHeader(),
+      }
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const offerRide = async (offerData) => {
+  try {
+    const response = await axios.post(
+      `${API_URL}/ride-requests`, // Backend to work
+      offerData,
+      {
+        headers: getAuthHeader(),
+      }
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getRideMatches = async () => {
+  try {
+    const response = await axios.get(`${API_URL}/ride-requests/matches`, {
+      // Backend to work
+      headers: getAuthHeader(),
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getUserProfile = async (userId) => {
   try {
     const token = localStorage.getItem("token");
-    if (token) {
-      options.headers = {
-        ...options.headers,
+
+    const response = await axios.get(`${API_URL}/users/profile`, {
+      // Backend to work
+      headers: {
         Authorization: `Bearer ${token}`,
-      };
-    }
-
-    const response = await fetch(API_BASE_URL + url, options);
-
-    if (!response.ok) {
-      const errorData = await response.json(); // Try to get error message from response
-      throw new Error(
-        errorData.message || `Request failed with status ${response.status}`
-      );
-    }
-
-    const contentType = response.headers.get("content-type");
-    if (contentType && contentType.includes("application/json")) {
-      return await response.json();
-    } else {
-      //If no JSON is returned, return the response text
-      return await response.text();
-    }
+      },
+    });
+    return response.data;
   } catch (error) {
-    console.error("API request error:", error);
-    throw error; // Re-throw to be caught by the component
+    throw error;
   }
-}
-
-// Authentication
-export async function registerUser(name, email, password) {
-  return handleRequest("/register", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, email, password }),
-  });
-}
-
-export async function loginUser(email, password) {
-  return handleRequest("/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password }),
-  });
-}
-
-// Profile
-export async function getUserProfile() {
-  return handleRequest("/profile");
-}
-
-// Ride Requests/Offers
-export async function requestRide(data) {
-  return handleRequest("/ride-requests", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
-}
-
-export async function offerRide(data) {
-  return handleRequest("/ride-offers", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
-}
-
-// Matches
-export async function getRideMatches() {
-  return handleRequest("/matches");
-}
-
-// Geocoding (Example - Adapt to your chosen service)
-export async function geocodeLocation(query) {
-  return handleRequest(`/geocode?query=${query}`);
-}
+};

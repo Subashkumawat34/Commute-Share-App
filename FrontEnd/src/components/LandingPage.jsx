@@ -40,8 +40,12 @@ function LandingPage() {
 
   return (
     <div className={styles.landingPage}>
-      <h1 className={styles.animatedTitle}>{text}</h1>
-      <p>Find daily commutes with ease!</p>
+      <div className={styles.page}>
+        <h1 className={styles.animatedTitle}>{text}</h1>
+      </div>
+      <div className={styles.page1}>
+        <p>Find daily commutes with ease!</p>
+      </div>
       <div className={styles.buttons}>
         <Link to="/login" className={styles.button}>
           Login

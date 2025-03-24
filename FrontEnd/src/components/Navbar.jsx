@@ -2,8 +2,14 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styles from "../styles/Navbar.module.css";
 import { AuthContext } from "../context/AuthContext.jsx";
+
 function Navbar() {
-  const { isLoggedIn } = useContext(AuthContext); // Get the login state
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // Clear the token
+    setIsLoggedIn(false); // Update the context
+  };
 
   return (
     <nav className={styles.navbar}>
@@ -14,7 +20,6 @@ function Navbar() {
           </Link>
         </li>
 
-        {/* Conditionally render these links only if the user is logged in */}
         {isLoggedIn && (
           <>
             <li>
@@ -37,10 +42,14 @@ function Navbar() {
                 Profile
               </Link>
             </li>
+            <li>
+              <button onClick={handleLogout} className={styles.navLink}>
+                Logout
+              </button>
+            </li>
           </>
         )}
 
-        {/*Add login register in navbar when user is not login*/}
         {!isLoggedIn && (
           <>
             <li>
