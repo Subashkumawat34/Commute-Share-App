@@ -1,42 +1,44 @@
 /* RegisterPage.module.css */
 
 .registerContainer {
-  width: 90%; /* Responsive width */
-  min-width: 450px; /* Slightly wider than login */
-  margin: 50px auto; /* Center horizontally and add top margin */
-  padding: 20px;
+  padding: 10px;
   background-color: #f9f9f9;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   position: relative; /* Make this relative for child positioning */
   z-index: 1; /* Ensure it's below the Navbar */
-  height: 100%;
+  width: 400px;
+}
+
+.content {
+  color: black;
 }
 
 .registerContainer h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  color: black;
 }
 
 .formGroup {
   margin-bottom: 15px;
+  color: black;
 }
 
 .formGroup label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #555;
 }
 
 .formGroup input {
-  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
   box-sizing: border-box; /* Important: Include padding in width */
+  background-color: white;
+  color: black;
 }
 
 .formGroup input:focus {

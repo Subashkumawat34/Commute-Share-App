@@ -1,10 +1,11 @@
 /* src/styles/RideMatches.module.css */
 .rideMatches {
-  padding: 20px;
+  padding: 40px;
 }
 
 .rideMatches h2 {
   margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .matchesList {

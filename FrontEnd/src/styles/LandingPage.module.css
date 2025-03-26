@@ -1,54 +1,182 @@
-/* src/styles/LandingPage.module.css */
+/* LandingPage.module.css*/
+
 .landingPage {
-  text-align: center;
-  padding: 50px;
-  align-items: center;
-  background-color: darkslategray;
-}
-
-.landingPage h1 {
-  margin-top: 80px;
-  font-size: 2.3em;
-  margin-top: 100px;
-  height: 200px;
-  height: 45vh;
-}
-
-.landingPage p {
-  font-size: 1.2em;
-  color: #c2b5b5;
-}
-
-.buttons {
-  margin-top: 30px;
-}
-
-.button {
-  display: inline-block;
-  padding: 12px 24px;
-  margin: 0 10px;
-  font-size: 1.1em;
-  text-decoration: none;
-  background-color: #3498db;
-  color: rgb(255, 255, 255);
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
   display: flex;
+
+  height: 100vh;
+  background-color: #f0f0f0;
+  text-align: center;
+  width: 103%;
+}
+
+.left {
+  margin-top: 120px;
+  margin-left: 40px;
+}
+.right {
+  margin: 50px 10px 0px 20px;
+  padding: 50px;
+}
+.ub1 {
+  display: flex;
+  margin: 10px;
+  gap: 15px;
+  height: 50px;
+}
+
+.ub3 {
+  color: black;
+}
+.ub4 {
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10px;
+  gap: 20px;
+}
+.ub4 input {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 35px;
+  width: 450px;
 }
 
-.button:hover {
-  background-color: #adc4d3;
-}
-
-.animatedTitle {
-  /* NEW CSS FOR THE ANIMATED TITLE */
-  font-size: 2.5em;
+.heading {
+  font-size: 2.2em;
   font-weight: bold;
-  margin-bottom: 20px;
-  min-height: 3em; /* CRUCIAL: Ensure it always takes up the same vertical space */
-  line-height: 1.2; /*Adjust spacing as desired*/
-  /* Add any other h1 styles */
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+  color: #222;
+}
+
+.subheading {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 1.5em;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.seePricesButton {
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.seePricesButton:hover {
+  background-color: #333;
+}
+
+.scheduleButton {
+  background-color: #f2f2f2;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.scheduleButton:hover {
+  background-color: #ddd;
+}
+
+.cardSection {
+  padding: 2em;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1em;
+  color: black;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2em;
+  color: black;
+}
+
+.card {
+  width: 30%;
+  min-width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cardTitle {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+.cardDescription {
+  font-size: 1em;
+  padding: 0 0.5em 1em 0.5em;
+}
+
+.cardButton {
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cardButton:hover {
+  background-color: #333;
+}
+
+@media (max-width: 768px) {
+  .landingPage {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+  .card {
+    width: 100%;
+  }
+
+  .cardContainer {
+    flex-direction: column;
+  }
 }

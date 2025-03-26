@@ -1,33 +1,30 @@
 /* LoginPage.module.css */
 
 .loginContainer {
-  width: 90%; /* Responsive width */
-  min-width: 450px; /* Maximum width on larger screens */
-  margin: 50px auto; /* Center horizontally and add top margin */
-  padding: 20px;
+  width: 400px; /* Responsive width */
+   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   position: relative; /* Make this relative for child positioning */
   z-index: 1; /* Ensure it's below the Navbar */
-  height: 100%;
+}
+
+.content{
+  color: black;
 }
 
 .loginContainer h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
-}
-
-.formGroup {
-  margin-bottom: 15px;
+  color: black;
 }
 
 .formGroup label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #555;
+  color: black;
 }
 
 .formGroup input {
@@ -37,6 +34,8 @@
   border-radius: 4px;
   font-size: 16px;
   box-sizing: border-box; /* Important: Include padding in width */
+  background-color: white;
+  color: black;
 }
 
 .formGroup input:focus {
@@ -98,22 +97,6 @@
   margin-bottom: 15px;
 }
 
-.formGroup label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #555;
-}
-
-.formGroup input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  box-sizing: border-box; /* Important: Include padding in width */
-}
-
 .formGroup input:focus {
   outline: none;
   border-color: #66afe9; /* Highlight on focus */
@@ -135,29 +118,12 @@
 .registerButton:hover {
   background-color: #218838; /* Darker shade on hover */
 }
-
-.errorMessage {
-  color: #dc3545;
-  margin-top: 10px;
-  text-align: center;
-}
-
 /* Media query for larger screens */
 @media (min-width: 768px) {
   .registerContainer {
     margin: 100px auto; /* Increase top margin on larger screens */
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 .oauthButtons {
   margin-top: 20px;
@@ -166,7 +132,8 @@
   gap: 10px;
 }
 
-.googleButton, .githubButton {
+.googleButton,
+.githubButton {
   width: 100%;
   padding: 10px;
   font-size: 1em;

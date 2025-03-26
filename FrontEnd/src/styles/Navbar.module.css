@@ -1,30 +1,71 @@
+/* Navbar.module.css */
+* {
+  width: 99.2%;
+}
 .navbar {
-  position: fixed; /* Or 'sticky' if you want it to scroll with the page initially */
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #000000; /* Or your desired background color */
-  color: white;
-  padding: 10px 0;
-  z-index: 1000; /* Very high z-index to ensure it's on top */
-  box-shadow: 0 2px 4px rgba(75, 69, 69, 0.2); /* Optional shadow */
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 15px 20px;
 }
 
-.navList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.container {
   display: flex;
-  justify-content: space-around; /* Or other alignment as needed */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 500px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5em; /* Adjust size as needed */
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  margin-right: 30px;
 }
 
 .navLink {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 5px;
+  margin-left: 20px;
 }
 
-.navLink:hover {
-  background-color: #353333;
+.about {
+  margin-left: 20px;
+  position: relative; /* For dropdown positioning */
+  cursor: pointer;
+}
+
+.dropdownArrow {
+  margin-left: 5px;
+  font-size: 0.8em; /* Adjust arrow size */
+}
+
+/* .language {
+  margin-right: 20px;
+} */
+
+/* .language i {
+  margin-right: 5px; 
+} */
+
+.signUpButton {
+  background-color: #fff; /* White background */
+  color: #000; /* Black text */
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 20px;
 }

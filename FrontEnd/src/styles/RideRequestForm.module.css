@@ -1,8 +1,8 @@
 /* src/styles/RideRequestForm.module.css */
 .rideform {
   width: 500px;
-  margin: 20px auto;
-  padding: 20px;
+  margin: 30px auto;
+  padding: 30px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fff;
