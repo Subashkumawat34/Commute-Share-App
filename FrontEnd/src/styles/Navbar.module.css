@@ -2,6 +2,31 @@
 * {
   width: 99.2%;
 }
+
+
+.profileIcon {
+  font-size: 24px;
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+}
+.profileIcon:hover {
+  color: #007bff; /* Change color on hover */
+}
+.logoutButton {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.logoutButton:hover {
+  background-color: #cc0000;
+}
+
 .navbar {
   background-color: #000; /* Black background */
   color: #fff; /* White text */

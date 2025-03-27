@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import styles from "../styles/Navbar.module.css";
 import { AuthContext } from "../context/AuthContext.jsx";
 
 function Navbar() {
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+  const navigate = useNavigate(); // Initialize navigate
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("token"); // Remove token from local storage
     setIsLoggedIn(false);
+    navigate("/"); // Navigate to the home page after logout
   };
 
   return (
@@ -33,18 +35,31 @@ function Navbar() {
           </div>
         </div>
         <div className={styles.right}>
-          {/* <span className={styles.language}>
-            <i className="fas fa-globe"></i> EN
-          </span> */}
           <Link to="/help" className={styles.navLink}>
             Help
           </Link>
-          <Link to="/login" className={styles.navLink}>
-            Log in
-          </Link>
-          <Link to="/register" className={styles.signUpButton}>
-            Sign up
-          </Link>
+
+          {/* Show Profile Icon & Logout Button if Logged In */}
+          {isLoggedIn ? (
+            <>
+              <Link to="/app/profile" className={styles.profileIcon}>
+              <i className="fas fa-user-circle"></i>
+              </Link>
+              <button onClick={handleLogout} className={styles.logoutButton}>
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              {/* Show Login & Register buttons if NOT logged in */}
+              <Link to="/login" className={styles.navLink}>
+                Log in
+              </Link>
+              <Link to="/register" className={styles.signUpButton}>
+                Sign up
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </nav>
