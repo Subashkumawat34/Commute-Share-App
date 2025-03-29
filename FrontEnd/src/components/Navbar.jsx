@@ -18,7 +18,7 @@ function Navbar() {
       <div className={styles.container}>
         <div className={styles.left}>
           <Link to="/" className={styles.logo}>
-            CommutePath
+            RideSharing
           </Link>
           <Link to="/ride" className={styles.navLink}>
             Ride

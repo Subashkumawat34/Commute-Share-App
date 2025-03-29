@@ -104,7 +104,7 @@ function LandingPage() {
 
       <div className={styles.cardSection}>
         <h1 className={styles.sectionTitle}>
-          Use the Uber app to help you travel your way
+          Use the RideShare app to help you travel your way
         </h1>
         <div className={styles.cardContainer}>
           <Card
