@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../styles/LandingPage.module.css";
 import myImage from "../assets/j2.webp";
 import Footer from "./Footer";
+import BuildingImage from "../assets/billding.png";
 // import rideImage from "../assets/ride.webp";
 // import ride1Image from "../assets/ride2.webp";
 // import ride2Image from "../assets/ride3.webp";
@@ -108,9 +109,30 @@ function LandingPage() {
           day”
         </h1>
         <div className={styles.cardContainer}>
-        <div>
-        
-        </div>
+          <div className={styles.parentdiv}>
+            <div>
+              <h1>What is Quick Ride - Carpool & Bikepool</h1>
+              <p>
+                We all like going together. Quick Ride will help you connect
+                with other like-minded verified professionals who are traveling
+                on the same route at the same time. Quick Ride helps commuters
+                to start sharing the ride instead of traveling alone. Innovative
+                technology to discover, connect, coordinate, and cost-share in a
+                seamless manner. Quick Ride automates the end to end process of
+                carpooling & bikepooling and makes pooling safe and hassle-free
+                for commuters. Quick Ride makes your office commute a fun
+                experience every day.
+              </p>
+            </div>
+            <div>
+              {" "}
+              <img
+                src={BuildingImage}
+                alt="Building"
+                className={styles.BuildingImage}
+              />
+            </div>
+          </div>
           {/* <Card
             imageUrl={rideImage}
             title="Ride Options"
