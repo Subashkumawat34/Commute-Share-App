@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styles from "../styles/LandingPage.module.css";
-import myImage from "../assets/j1.webp";
+import myImage from "../assets/j2.webp";
 import Footer from "./Footer";
-import rideImage from "../assets/ride.webp";
-import ride1Image from "../assets/ride2.webp";
-import ride2Image from "../assets/ride3.webp";
+// import rideImage from "../assets/ride.webp";
+// import ride1Image from "../assets/ride2.webp";
+// import ride2Image from "../assets/ride3.webp";
 
 function RequestRideSection() {
   return (
@@ -104,10 +104,14 @@ function LandingPage() {
 
       <div className={styles.cardSection}>
         <h1 className={styles.sectionTitle}>
-          Use the RideShare app to help you travel your way
+          “We are on a mission to remove 1 million cars from the roads, every
+          day”
         </h1>
         <div className={styles.cardContainer}>
-          <Card
+        <div>
+        
+        </div>
+          {/* <Card
             imageUrl={rideImage}
             title="Ride Options"
             description="There's more than one way to move with Uber, no matter where you are or where you're headed next."
@@ -124,7 +128,7 @@ function LandingPage() {
             title="10,000+ cities"
             description="The app is available in thousands of cities worldwide, so you can request a ride even when you're far from home."
             buttonText="Search cities"
-          />
+          /> */}
         </div>
       </div>
 

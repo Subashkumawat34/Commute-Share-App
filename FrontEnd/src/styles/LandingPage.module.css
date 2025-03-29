@@ -104,6 +104,8 @@
   font-weight: bold;
   margin-bottom: 1em;
   color: black;
+  background-color: rgb(126, 199, 126);
+  padding: 10px;
 }
 
 .cardContainer {
