@@ -133,24 +133,6 @@ function LandingPage() {
               />
             </div>
           </div>
-          {/* <Card
-            imageUrl={rideImage}
-            title="Ride Options"
-            description="There's more than one way to move with Uber, no matter where you are or where you're headed next."
-            buttonText="Search ride options"
-          />
-          <Card
-            imageUrl={ride1Image}
-            title="700+ airports"
-            description="You can request a ride to and from most major airports. Schedule a ride to the airport for one less thing to worry about."
-            buttonText="Search airports"
-          />
-          <Card
-            imageUrl={ride2Image}
-            title="10,000+ cities"
-            description="The app is available in thousands of cities worldwide, so you can request a ride even when you're far from home."
-            buttonText="Search cities"
-          /> */}
         </div>
       </div>
 
