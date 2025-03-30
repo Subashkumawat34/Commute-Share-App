@@ -44,16 +44,16 @@ const Footer = () => {
               <a href="#">Eat</a>
             </li>
             <li>
-              <a href="#">Uber for Business</a>
+              <a href="#">RideSharing for Business</a>
             </li>
             <li>
-              <a href="#">Uber Freight</a>
+              <a href="#">RideSharing Freight</a>
             </li>
             <li>
               <a href="#">Gift cards</a>
             </li>
             <li>
-              <a href="#">Uber Health</a>
+              <a href="#">RideSharing Health</a>
             </li>
           </ul>
         </div>
@@ -87,7 +87,7 @@ const Footer = () => {
       </div>
 
       <div className={styles.footerBottom}>
-        <p>© 2025 Uber Technologies Inc.</p>
+        <p>© 2025 RideSharing Technologies Inc.</p>
         <div>
           <a href="#">Privacy</a>
           <a href="#">Accessibility</a>

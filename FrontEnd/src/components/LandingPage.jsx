@@ -1,13 +1,80 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; // Keep this import at the top
 import styles from "../styles/LandingPage.module.css";
-import myImage from "../assets/j2.webp";
+import myImage from "../assets/ride2.webp";
 import Footer from "./Footer";
 import BuildingImage from "../assets/billding.png";
-// import rideImage from "../assets/ride.webp";
-// import ride1Image from "../assets/ride2.webp";
-// import ride2Image from "../assets/ride3.webp";
+import axios from "axios"; // Move axios import to the top
+// Import LocationIQSearch
+
+const LocationIQSearch = ({ onSelectLocation, placeholder }) => {
+  const [query, setQuery] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+
+  const API_KEY = "pk.3778810c42d0c13a9a7e0ed5424c937d"; // Replace with your API key
+
+  const handleSearch = async (e) => {
+    setQuery(e.target.value);
+
+    if (e.target.value.length > 2) {
+      try {
+        const response = await axios.get(
+          `https://us1.locationiq.com/v1/search.php`,
+          {
+            params: {
+              key: API_KEY,
+              q: e.target.value,
+              format: "json",
+            },
+          }
+        );
+
+        setSuggestions(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    } else {
+      setSuggestions([]);
+    }
+  };
+
+  const handleSelect = (location) => {
+    onSelectLocation(location); // Call the parent's function
+    setQuery(location.display_name);
+    setSuggestions([]);
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={query}
+        onChange={handleSearch}
+        placeholder={placeholder || "Search location..."}
+        style={{ width: "300px", padding: "10px" }}
+      />
+      <ul style={{ listStyle: "none", padding: 0 }}>
+        {suggestions.map((place) => (
+          <li
+            key={place.place_id}
+            onClick={() => handleSelect(place)}
+            style={{
+              cursor: "pointer",
+              padding: "5px",
+              borderBottom: "1px solid #ccc",
+            }}
+          >
+            {place.display_name}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 function RequestRideSection() {
+  const [pickupLocation, setPickupLocation] = useState(null);
+  const [destination, setDestination] = useState(null);
+
   return (
     <div className={styles.rideSectionContent}>
       <h1 className={styles.heading}>
@@ -20,10 +87,28 @@ function RequestRideSection() {
       </p>
       <div className={styles.ub4}>
         <div>
-          <input type="text" placeholder="Enter location" />
+          <LocationIQSearch
+            onSelectLocation={(location) => setPickupLocation(location)}
+            placeholder="Enter Pickup Location"
+          />
+          {pickupLocation && (
+            <p>
+              Pickup Location Selected: {pickupLocation.display_name} (Lat:{" "}
+              {pickupLocation.lat}, Lng: {pickupLocation.lon})
+            </p>
+          )}
         </div>
         <div>
-          <input type="text" placeholder="Enter Destination" />
+          <LocationIQSearch
+            onSelectLocation={(location) => setDestination(location)}
+            placeholder="Enter Destination"
+          />
+          {destination && (
+            <p>
+              Destination Selected: {destination.display_name} (Lat:{" "}
+              {destination.lat}, Lng: {destination.lon})
+            </p>
+          )}
         </div>
       </div>
       <div className={styles.buttonRow}>
@@ -36,6 +121,9 @@ function RequestRideSection() {
 
 // Placeholder component for Offer section
 function OfferSection() {
+  const [pickupLocation, setPickupLocation] = useState(null);
+  const [destination, setDestination] = useState(null);
+
   return (
     <div className={styles.offerSectionContent}>
       <h1 className={styles.heading}>Offer a Ride</h1>
@@ -45,10 +133,28 @@ function OfferSection() {
       </p>
       <div className={styles.ub4}>
         <div>
-          <input type="text" placeholder="Enter Pickup Location" />
+          <LocationIQSearch
+            onSelectLocation={(location) => setPickupLocation(location)}
+            placeholder="Enter Pickup Location"
+          />
+          {pickupLocation && (
+            <p>
+              Pickup Location Selected: {pickupLocation.display_name} (Lat:{" "}
+              {pickupLocation.lat}, Lng: {pickupLocation.lon})
+            </p>
+          )}
         </div>
         <div>
-          <input type="text" placeholder="Enter Destination" />
+          <LocationIQSearch
+            onSelectLocation={(location) => setDestination(location)}
+            placeholder="Enter Destination"
+          />
+          {destination && (
+            <p>
+              Destination Selected: {destination.display_name} (Lat:{" "}
+              {destination.lat}, Lng: {destination.lon})
+            </p>
+          )}
         </div>
       </div>
       <div className={styles.buttonRow}>
