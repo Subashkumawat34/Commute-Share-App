@@ -35,6 +35,10 @@
 .ub3 {
   color: black;
 }
+.pickupLocation{
+  /* padding-left: 50%;
+  margin-right: 10%; */
+}
 .ub4 {
   margin: 40px;
   display: flex;
@@ -42,6 +46,10 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
+}
+.ub6{
+  background-color: black;
+  color: black;
 }
 .ub4 input {
   color: black;
@@ -81,6 +89,8 @@
   font-size: 1em;
   cursor: pointer;
   transition: background-color 0.2s;
+  margin-left: 20%;
+  margin-right: 10%;
 }
 
 .seePricesButton:hover {
