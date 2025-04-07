@@ -21,7 +21,7 @@ function LoginPage() {
       const user = await signInWithGoogle();
       localStorage.setItem("token", user.uid); // Store user ID as token
       setIsLoggedIn(true);
-      navigate("/app/request-ride");
+      navigate("/");
     } catch (err) {
       setError("Google Sign-In failed.");
     }
@@ -33,7 +33,7 @@ function LoginPage() {
       const user = await signInWithGithub();
       localStorage.setItem("token", user.uid);
       setIsLoggedIn(true);
-      navigate("/app/request-ride");
+      navigate("/");
     } catch (err) {
       setError("GitHub Sign-In failed.");
     }
