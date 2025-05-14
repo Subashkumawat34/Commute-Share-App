@@ -1,0 +1,96 @@
+/* Navbar.module.css */
+* {
+  width: 99.2%;
+}
+
+
+.profileIcon {
+  font-size: 24px;
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+}
+.profileIcon:hover {
+  color: #007bff; /* Change color on hover */
+}
+.logoutButton {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.logoutButton:hover {
+  background-color: #cc0000;
+}
+
+.navbar {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 15px 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 500px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5em; /* Adjust size as needed */
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  margin-right: 30px;
+}
+
+.navLink {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.about {
+  margin-left: 20px;
+  position: relative; /* For dropdown positioning */
+  cursor: pointer;
+}
+
+.dropdownArrow {
+  margin-left: 5px;
+  font-size: 0.8em; /* Adjust arrow size */
+}
+
+/* .language {
+  margin-right: 20px;
+} */
+
+/* .language i {
+  margin-right: 5px; 
+} */
+
+.signUpButton {
+  background-color: #fff; /* White background */
+  color: #000; /* Black text */
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 20px;
+}

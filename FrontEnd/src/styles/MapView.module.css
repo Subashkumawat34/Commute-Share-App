@@ -1,0 +1,10 @@
+/*  You might not need specific CSS for the MapView component itself,
+    but you can use CSS to style the map container.  Leaflet itself
+    injects its own styles. */
+
+.map {
+  width: 100%;
+  height: 500px; /* Or whatever height you want */
+  border-radius: 8px; /*Example border radius for styling */
+  background-color: red;
+}

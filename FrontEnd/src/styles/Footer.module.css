@@ -1,0 +1,61 @@
+/* Footer Styles */
+.footer {
+  background-color: black;
+  color: white;
+  padding: 2em;
+}
+
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* wrap when viewport is small */
+}
+
+.footerColumn {
+  width: 20%;
+  text-align: left; /* aligns texts to left */
+  margin-bottom: 1em; /* bottom space between columns */
+}
+
+.footerColumn h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.footerColumn ul {
+  list-style: none;
+  padding: 0; /* remove bullet points */
+}
+
+.footerColumn li {
+  margin-bottom: 0.3em;
+}
+
+.footerColumn a {
+  color: white;
+  text-decoration: none;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* vertically align contents */
+  margin-top: 2em; /* space between top and bottom sections */
+  font-size: 0.8em;
+}
+/* Mobile-Friendly styles for the Footer */
+@media (max-width: 768px) {
+  .footerTop {
+    flex-direction: column; /* stack columns vertically */
+  }
+  .footerColumn {
+    width: 100%; /* make each column full width */
+    text-align: left; /* align items to the left */
+  }
+
+  .footerBottom {
+    flex-direction: column; /* stack columns vertically */
+    text-align: left;
+  }
+}
